@@ -1021,8 +1021,8 @@ for line in tab:
         refposmax=rmax
         aln_info=(str(genename),str(seqid),str(refid),str(refposmin),str(refposmax),str(rscore))
         dict_aln.setdefault(genename, []).append(aln_info)
-        contiglength=int(seqid.split("_")[3])
-        contigcov=float(seqid.split("_")[5])
+        contiglength=len(str(seqs[seqid][0]))     #int(seqid.split("_")[3])
+        contigcov=10                              #float(seqid.split("_")[5])
         if contigcov<cov or contiglength<clen:
             continue
         else:
